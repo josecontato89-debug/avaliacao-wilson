@@ -1,0 +1,304 @@
+/* reset / tipagens pequenas mantidas */
+.mudar{
+    list-style-type: square; /* Define marcador tipo quadrado para elemento com classe .mudar */
+    text-align: right; /* Alinha texto à direita */
+}
+.mudar2{
+    list-style-type: square; /* Mesmo para .mudar2 */
+    text-align: right ;
+}
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* Define família de fontes do documento */
+    background-color: rgb(163, 127, 73); /* Cor de fundo da página */
+    padding: 25px; /* Espaçamento interno da página */
+    text-align: center; /* Centraliza texto por padrão (pode ser sobrescrito) */
+    margin: 0; /* Remove margens padrão do body */
+}
+h1 {
+    background-color: rgb(192, 181, 116); /* Fundo do cabeçalho principal */
+    color: rgb(0, 0, 0); /* Cor do texto do h1 */
+    text-align: center; /* Centraliza o título */
+}
+nav {
+    background-color: rgb(192, 181, 116); /* Fundo do nav */
+    padding: 15px; /* Espaçamento interno no nav */
+    text-align:right; /* Alinha conteúdo do nav à direita */
+    margin-bottom: 25px; /* Espaçamento abaixo do nav */
+}
+ul {
+    list-style-type: square; /* Marcadores em quadrado para ul */
+    padding: 10px; /* Espaçamento interno */
+    background-color: rgb(173, 149, 97); /* Fundo para listas */
+    color: rgb(2, 2, 2); /* Cor do texto */
+    text-align: center; /* Centraliza itens do texto */
+    list-style-position: inside; /* Posiciona marcador dentro da caixa */
+}
+li {
+    margin: 10px; /* Espaço entre itens da lista */
+    font-size: 20px; /* Tamanho da fonte para itens */
+    color: rgb(0, 0, 0); /* Cor do texto */
+    text-align: center; /* Centraliza texto do li */
+    font-weight: bold; /* Negrito nos itens */
+   text-align-last: center; /* Centraliza a última linha do texto se quebrar em várias linhas */
+}
+ol {
+    list-style-type: decimal; /* Numeracão para ol */
+    padding: 10px; /* Espaço interno */
+    background-color: rgb(173, 149, 97); /* Fundo do ol */
+    color: rgb(2, 2, 2); /* Cor do texto do ol */
+    text-align: center; /* Centraliza texto do ol */
+    list-style-position: inside; /* Posição do marcador */
+}
+
+/* cabeçalho/rodapé */
+header, footer {
+    background-color: rgb(192, 181, 116); /* Fundo para header e footer */
+    padding: 10px; /* Espaçamento interno */
+}
+
+/* cards layout */
+.container {
+    max-width: 1100px; /* Largura máxima do container central */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    display: flex; /* Usa flexbox para layout dos filhos */
+    align-items: flex-start; /* Alinha itens no topo */
+    justify-content: center; /* Centraliza conteúdo dentro do container */
+    flex-wrap: wrap; /* Permite que os elementos quebrem linha quando necessário */
+    padding: 30px;  /* Espaçamento interno do container */
+}
+
+.cards {
+    display: flex; /* Container de cards usa flexbox */
+    flex-wrap: nowrap; /* Tenta manter os cards em uma linha (sobrescrito em media queries) */
+    gap: 20px; /* Espaço entre cards */
+    justify-content: center; /* Centraliza cards */
+    align-items: stretch; /* Estica para altura igual */
+}
+
+/* card */
+.container .card {
+    position: relative; /* Posicionamento relativo para filhos posicionados */
+    flex: 1 1 30%; /* Flex: crescer encolher e largura base ~30% */
+    max-width: 340px; /* Largura máxima de cada card */
+    background-color: #fff; /* Fundo branco do card */
+    margin: 10px; /* Margem ao redor do card */
+    padding: 0; /* Remove preenchimento interno padrão */
+    display: flex; /* Estrutura interna do card em flex */
+    flex-direction: column; /* Conteúdo empilhado verticalmente */
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15); /* Sombra do card */
+    transition: transform 0.25s ease, box-shadow 0.25s ease; /* Transição suave para hover */
+    border-radius: 15px; /* Cantos arredondados */
+    overflow: hidden; /* Esconde conteúdo que ultrapassa o card */
+}
+
+/* efeito hover */
+.container .card:hover {
+    transform: translateY(-8px); /* Move card levemente para cima ao passar o mouse */
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25); /* Intensifica a sombra no hover */
+}
+
+/* area da imagem */
+.container .card .image {
+    width: 100%; /* Largura total da área de imagem */
+    height: 180px; /* Altura fixa da área de imagem */
+    overflow: hidden; /* Corta o que ultrapassar */
+    background: #eee; /* Cor de fundo enquanto a imagem carrega */
+}
+.container .card .image img {
+    width: 100%; /* Imagem ocupa toda a área */
+    height: 100%; /* Imagem ocupa toda a altura */
+    object-fit: cover; /* Corta a imagem proporcionalmente para preencher a área */
+    display: block; /* Remove espaçamento inline */
+}
+
+/* conteúdo do card */
+.container .card .content {
+    padding: 15px; /* Espaçamento interno do conteúdo */
+    color: #111; /* Cor do texto */
+    text-align: center; /* Centraliza o conteúdo textual */
+}
+.container .card .content h2 {
+    margin: 8px 0; /* Margem vertical para o título */
+    font-size: 1.2rem; /* Tamanho da fonte do título */
+}
+.container .card .content p {
+    margin: 6px 0 12px 0; /* Margens para parágrafo descritivo */
+    font-size: 0.95rem; /* Tamanho da fonte do parágrafo */
+}
+.container .card .content p.extra-info {
+    margin-top: 12px; /* Margem superior para informação extra */
+    font-size: 0.95rem; /* Tamanho da fonte da info extra */
+    color: #333; /* Cor do texto extra */
+    background: #f7f3ea; /* Fundo levemente amarelado para destaque */
+    padding: 8px 10px; /* Espaçamento interno da info extra */
+    border-radius: 8px; /* Cantos arredondados na info extra */
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.4); /* Sombra interna sutil */
+}
+
+/* botão */
+button {
+    background-color: rgb(131, 101, 18); /* Cor do botão */
+    color: rgb(255, 255, 255); /* Cor do texto do botão */
+    font-size: 16px; /* Tamanho da fonte do botão */
+    padding: 8px 12px; /* Espaçamento interno do botão */
+    font-weight: bold; /* Negrito no texto do botão */
+    margin-top: 10px; /* Espaço acima do botão */
+    margin-bottom: 5px; /* Espaço abaixo do botão */
+    border-radius: 8px; /* Cantos arredondados */
+    border: none; /* Remove borda padrão */
+    cursor: pointer; /* Cursor mão ao passar sobre o botão */
+}
+
+/* controles externos */
+.controls {
+    text-align: center; /* Centraliza controles */
+    margin: 20px 0; /* Espaçamento vertical */
+}
+
+/* curiosidade em destaque */
+.random-curiosity{
+    display: inline-block; /* Exibe como bloco inline */
+    margin-top: 12px; /* Margem superior */
+    background: #f7f3ea; /* Fundo claro */
+    color: #111; /* Cor do texto */
+    padding: 10px 14px; /* Preenchimento interno */
+    border-radius: 8px; /* Cantos arredondados */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12); /* Sombra leve */
+    max-width: 720px; /* Largura máxima do container */
+    text-align: center; /* Centraliza texto */
+    font-weight: 600; /* Peso da fonte */
+}
+
+/* hero */
+.hero {
+  max-width: 1100px; /* Largura máxima do banner hero */
+  margin: 18px auto; /* Espaçamento e centralização */
+  border-radius: 12px; /* Cantos arredondados */
+  overflow: hidden; /* Corta o conteúdo que exceder os limites */
+}
+.hero img {
+  width: 100%; /* Imagem ocupa toda a largura */
+  height: 260px; /* Altura fixa do hero image */
+  object-fit: cover; /* Corta proporcionalmente para preencher */
+  display: block; /* Remove gap inline */
+}
+
+/* galeria — apenas fotos com hover (zoom) */
+.gallery {
+    display: flex; /* Flex para alinhar itens da galeria */
+    gap: 18px; /* Espaço entre itens */
+    justify-content: center; /* Centraliza a galeria */
+    align-items: stretch; /* Estica itens verticalmente */
+    flex-wrap: nowrap; /* Tenta manter em linha (quebrado em media queries) */
+    margin: 22px 0; /* Espaçamento vertical */
+}
+.gallery-item {
+    position: relative; /* Posicionamento relativo para overlays futuros */
+    width: 320px; /* Largura fixa do item */
+    height: 220px; /* Altura fixa do item */
+    overflow: hidden; /* Corta o conteúdo excedente */
+    border-radius: 12px; /* Cantos arredondados */
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12); /* Sombra do item */
+    background: #eee; /* Fundo enquanto imagem carrega */
+    flex: 0 0 auto; /* Não flexiona além do definido */
+}
+.gallery-item img {
+    width: 100%; /* Imagem ocupa largura total do item */
+    height: 100%; /* Imagem ocupa altura total do item */
+    object-fit: cover; /* Cobre a área mantendo proporção */
+    display: block; /* Remove espaço inline */
+    transition: transform 0.5s ease, filter 0.35s ease; /* Transição suave para hover */
+    transform-origin: center; /* Origem da transformação no centro */
+}
+.gallery-item:hover img {
+    transform: scale(1.09); /* Aumenta levemente a imagem ao passar o mouse */
+    filter: brightness(1.05); /* Aumenta brilho no hover */
+    cursor: zoom-in; /* Cursor de zoom para indicar clique */
+}
+
+/* caixa de curiosidade (fixa, segue wireframe) */
+.curiosity-box {
+    margin-top: 16px; /* Margem superior */
+    background: #f7f3ea; /* Fundo claro */
+    color: #111; /* Cor do texto */
+    padding: 14px 18px; /* Preenchimento interno */
+    border-radius: 10px; /* Cantos arredondados */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* Sombra sutil */
+    max-width: 720px; /* Largura máxima */
+    margin-left: auto; /* Centraliza horizontalmente */
+    margin-right: auto; /* Centraliza horizontalmente */
+    font-weight: 600; /* Texto em negrito */
+    min-height: 46px; /* Altura mínima para consistência visual */
+    display: flex; /* Usa flex para centralizar conteúdo */
+    align-items: center; /* Alinha verticalmente ao centro */
+    justify-content: center; /* Centraliza horizontalmente */
+    text-align: center; /* Centraliza o texto */
+}
+
+/* modal de imagem */
+.modal {
+  position: fixed; /* Modal fixo sobre a tela */
+  inset: 0; /* Ocupa toda a viewport */
+  display: none; /* Esconde por padrão */
+  align-items: center; /* Centra verticalmente quando aberto */
+  justify-content: center; /* Centra horizontalmente quando aberto */
+  z-index: 9999; /* Fica acima de outros elementos */
+}
+.modal.open { display: flex; } /* Quando tem a classe .open exibe como flex */
+.modal-backdrop {
+  position: absolute; /* Backdrop ocupa tela inteira por trás do conteúdo */
+  inset: 0;
+  background: rgba(0,0,0,0.6); /* Fundo semi-transparente */
+}
+.modal-content {
+  position: relative; /* Relativo para o botão close posicionado */
+  max-width: 90%; /* Limita largura máxima */
+  max-height: 90%; /* Limita altura máxima */
+  padding: 12px; /* Espaçamento interno */
+  z-index: 2; /* Conteúdo acima do backdrop */
+  display: flex; /* Organiza conteúdo do modal em coluna */
+  flex-direction: column; /* Empilha elementos verticalmente */
+  gap: 8px; /* Espaçamento entre elementos */
+  align-items: center; /* Centraliza itens */
+}
+.modal-content img {
+  max-width: 100%; /* Imagem não ultrapassa largura do modal */
+  max-height: calc(90vh - 80px); /* Limita altura para caber na viewport */
+  border-radius: 8px; /* Cantos arredondados */
+  box-shadow: 0 8px 30px rgba(0,0,0,0.45); /* Sombra forte para destaque */
+  display: block; /* Remove gap inline */
+}
+.modal-caption {
+  margin: 0; /* Remove margens */
+  color: #fff; /* Texto da legenda em branco */
+  text-align: center; /* Centraliza legenda */
+  font-size: 0.95rem; /* Tamanho da fonte da legenda */
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6); /* Sombra para melhorar leitura sobre fundo escuro */
+}
+.modal-close {
+  position: absolute; /* Posiciona botão de fechar relativamente ao modal-content */
+  top: -8px; /* Posicionamento acima da caixa */
+  right: -8px; /* Posicionamento à direita da caixa */
+  background: #222; /* Fundo do botão */
+  color: #fff; /* Cor do 'X' */
+  border: none; /* Remove borda padrão */
+  width: 36px; /* Largura do botão */
+  height: 36px; /* Altura do botão */
+  border-radius: 50%; /* Botão redondo */
+  font-size: 20px; /* Tamanho do caractere */
+  cursor: pointer; /* Cursor de clique */
+  z-index: 3; /* Garante que fique acima da imagem */
+  line-height: 1; /* Altura de linha para centralizar o símbolo */
+}
+
+/* responsividade */
+@media (max-width: 700px) {
+    .container { padding: 15px; } /* Reduz padding do container em telas pequenas */
+    .cards { flex-wrap: wrap; } /* Permite quebrar linha nos cards para caber melhor */
+    .container .card { width: 100%; max-width: 420px; flex: 1 1 100%; } /* Cards ocupam largura total */
+}
+@media (max-width: 760px) {
+    .gallery { flex-wrap: wrap; gap: 14px; } /* Galeria passa a quebrar linha */
+    .gallery-item { width: 100%; max-width: 520px; height: 220px; flex: 1 1 100%; } /* Ajusta itens da galeria */
+    .hero img { height: 160px; } /* Reduz altura da hero image em telas menores */
+}

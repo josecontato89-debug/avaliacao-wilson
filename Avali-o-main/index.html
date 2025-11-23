@@ -1,0 +1,80 @@
+<!DOCTYPE html> <!-- Declara documento HTML5 -->
+<html lang="pt-br"> <!-- Define idioma do documento como português do Brasil -->
+<head>
+  <meta charset="utf-8" /> <!-- Define codificação de caracteres para UTF-8 -->
+  <meta name="viewport" content="width=device-width,initial-scale=1" /> <!-- Meta responsiva para dispositivos móveis -->
+  <title>Cidades</title> <!-- Título mostrado na aba do navegador -->
+  <link rel="stylesheet" href="Styles/Style/style.css"> <!-- Inclui arquivo CSS localizado em Styles/Style/ -->
+  <script src="Styles/scripts/script.js" defer></script> <!-- Inclui script JS e adia execução até parsing do HTML -->
+</head>
+<body>
+  <header>
+    <h1 id="title">Guia de Salvador - Bahia</h1> <!-- Título principal da página -->
+    <h2 id="subtitulo">Descubra um pouco sobre a terra de todos os santos</h2> <!-- Subtítulo explicativo -->
+  </header>
+
+  <!-- hero image -->
+  <section class="hero" aria-hidden="false"> <!-- Seção hero com imagem de destaque -->
+    <img src="Styles/assets/2021-Salvador-Capa-1.webp" alt="Vista de Salvador"> <!-- Imagem do hero com atributo alt -->
+  </section>
+
+  <main class="container"> <!-- Container principal que agrupa cards e conteúdos -->
+    <!-- três cards interativos -->
+    <div class="cards" role="list"> <!-- Container de cards, role list para acessibilidade -->
+      <div class="card" role="listitem"> <!-- Card 1 -->
+        <div class="image"><img id="elevador" src="Styles/assets/elevador lacerda.avif" alt="Elevador Lacerda"></div> <!-- Imagem do elevador -->
+        <div class="content">
+          <h2>Elevador Lacerda</h2> <!-- Título do card -->
+          <p>O primeiro elevador urbano do mundo</p> <!-- Texto descritivo curto -->
+          <button type="button">Saiba mais</button> <!-- Botão que abre info extra (manipulado por script.js) -->
+        </div>
+      </div>
+
+      <div class="card" role="listitem"> <!-- Card 2 -->
+        <div class="image"><img id="muqueca" src="Styles/assets/ChatGPT Image 11 de nov. de 2025, 22_22_01.png" alt="Moqueca Baiana"></div> <!-- Imagem da moqueca (nome de arquivo do asset) -->
+        <div class="content">
+          <h2>Moqueca Baiana</h2> <!-- Título do card -->
+          <p>De origem indígena "Pokeka"</p> <!-- Descrição curta -->
+          <button type="button">Saiba mais</button> <!-- Botão para expandir informação -->
+        </div>
+      </div>
+
+      <div class="card" role="listitem"> <!-- Card 3 -->
+        <div class="image"><img id="festa" src="Styles/assets/iemanj.jpg" alt="Festa de Iemanjá"></div> <!-- Imagem da festa -->
+        <div class="content">
+          <h2>Festa de Iemanjá</h2> <!-- Título do card -->
+          <p>Começa no dia 2 de fevereiro</p> <!-- Descrição curta -->
+          <button type="button">Saiba mais</button> <!-- Botão para mostrar texto extra -->
+        </div>
+      </div>
+    </div>
+
+    <!-- galeria de 3 fotos (apenas imagens) -->
+    <section class="gallery" aria-label="Galeria da Bahia"> <!-- Galeria com 3 imagens clicáveis -->
+      <figure class="gallery-item"><img src="Styles/assets/igreja de são francisco.jpg" alt="Igreja e Convento de São Francisco"></figure> <!-- Imagem 1 -->
+      <figure class="gallery-item"><img src="Styles/assets/pelourinho.jpg" alt="Pelourinho"></figure> <!-- Imagem 2 -->
+      <figure class="gallery-item"><img src="Styles/assets/farol-da-barra-beach.jpg" alt="Farol da Barra"></figure> <!-- Imagem 3 -->
+    </section>
+
+    <!-- botão curiosidade + caixa fixa para mostrar curiosidade -->
+    <div class="controls">
+      <button id="btn" type="button">Gerar curiosidade aleatória</button> <!-- Botão que gera curiosidade aleatória -->
+      <div class="curiosity-box" aria-live="polite" tabindex="0">Clique em "Gerar curiosidade aleatória"</div> <!-- Caixa que recebe a curiosidade (aria-live para leitores de tela) -->
+    </div>
+  </main>
+
+  <!-- modal para visualização das imagens da galeria -->
+  <div class="modal" id="imageModal" aria-hidden="true" role="dialog" aria-label="Visualização de imagem"> <!-- Modal escondido por padrão -->
+    <div class="modal-backdrop" id="modalBackdrop"></div> <!-- Backdrop que fecha o modal ao clicar -->
+    <div class="modal-content" role="document"> <!-- Conteúdo do modal -->
+      <button class="modal-close" id="modalClose" aria-label="Fechar">×</button> <!-- Botão de fechar -->
+      <img id="modalImg" src="" alt=""> <!-- Imagem exibida dinamicamente pelo script -->
+      <p id="modalCaption" class="modal-caption"></p> <!-- Legenda da imagem exibida -->
+    </div>
+  </div>
+
+  <footer>
+    <p>Os dados contidos na descrição dos produtos podem estar errados. O developer usou I.A. para os textos.</p> <!-- Nota de rodapé -->
+  </footer>
+</body>
+</html>

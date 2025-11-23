@@ -1,0 +1,70 @@
+/* ...existing code... */
+:root{ /* Define variáveis CSS (cores usadas no layout) */
+  --bg:#f3f1ef; /* Cor de fundo alternativa */
+  --card:#ffffff; /* Cor de fundo dos cartões */
+  --accent:#1380e6; /* Cor principal de destaque (botões azuis) */
+  --paper:#fbfaf8; /* Cor do "papel" da receita */
+  --muted:#6b6b6b; /* Cor para textos secundários */
+}
+
+*{box-sizing:border-box} /* Faz com que padding/border sejam incluídos no tamanho total dos elementos */
+body{ /* Estilização do corpo da página */
+  font-family: "Helvetica Neue", Arial, sans-serif; /* Fonte padrão */
+  background: linear-gradient(180deg,#efece9 0%, #efe6dc 100%); /* Fundo com degradê */
+  margin:0; /* Remove margem padrão do body */
+  padding:32px; /* Espaçamento interno ao redor do conteúdo */
+  display:flex; /* Usa flexbox para centralizar o conteúdo */
+  justify-content:center; /* Centraliza horizontalmente */
+}
+
+.book{ /* Container principal do "livro" */
+  width:360px; /* Largura fixa ideal para visualização móvel */
+  max-width:92vw; /* Limita a largura em telas menores */
+}
+
+header{text-align:center;margin-bottom:18px} /* Centraliza o cabeçalho e espaça abaixo */
+header h1{ /* Estilização do título principal */
+  margin:0 0 12px; /* Remove margem superior e define inferior */
+  font-size:1.6rem; /* Tamanho da fonte do título */
+  letter-spacing:1px; /* Espaçamento entre letras */
+}
+.lead{color:var(--muted);font-size:0.95rem;margin:0} /* Texto descritivo em cor e tamanho menores */
+
+.list{display:flex;flex-direction:column;gap:14px;margin-bottom:14px} /* Lista vertical de cartões com espaçamento */
+
+.card{ /* Estilo do cartão de receita */
+  background:var(--card); /* Fundo branco */
+  border-radius:10px; /* Cantos arredondados */
+  padding:14px; /* Espaçamento interno */
+  display:flex; /* Usa flexbox para alinhar imagem e conteúdo */
+  align-items:center; /* Alinha verticalmente ao centro */
+  gap:12px; /* Espaçamento entre elementos internos */
+  box-shadow:0 6px 18px rgba(0,0,0,0.06); /* Sombra leve */
+}
+.card img{ /* Estilo da imagem dentro do cartão */
+  width:76px;height:64px;object-fit:cover;border-radius:8px;flex:0 0 76px; /* Tamanho fixo e recorte */
+}
+.card h3{margin:0;font-size:1.05rem;flex:1;text-align:left} /* Título da receita dentro do cartão */
+.btn-open{ /* Botão "Ver Receita" */
+  background:var(--accent);color:#fff;border:none;padding:8px 12px;border-radius:8px;cursor:pointer;font-weight:600; /* Aparência e comportamento */
+}
+
+.controls{display:flex;justify-content:center;margin:12px 0} /* Centraliza o botão surpresa */
+.btn-surprise{ /* Estilo do botão surpresa */
+  background:#f4a63b;border:none;color:#fff;padding:10px 18px;border-radius:8px;cursor:pointer;font-weight:700; /* Cor e formato */
+  box-shadow:0 6px 12px rgba(244,166,59,0.15); /* Sombra do botão */
+}
+
+.recipe-display .paper{ /* Estilo do bloco que mostra a receita */
+  background:var(--paper);padding:16px;border-radius:10px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.6), 0 6px 18px rgba(0,0,0,0.06); /* Aparência parecida com papel */
+}
+
+#recipeTitle{text-align:center;margin:0 0 10px;font-size:1.15rem} /* Título da receita exibida */
+#recipeContent{color:#222;font-size:0.95rem;line-height:1.45} /* Conteúdo textual da receita */
+.section-title{font-weight:700;margin-top:8px;margin-bottom:6px} /* Classe utilitária para títulos de seção */
+.small{color:var(--muted);font-size:0.9rem} /* Texto pequeno e em cor secundária */
+
+/* responsivo */
+@media (max-width:420px){ /* Ajustes para telas menores */
+  .card img{width:64px;height:54px} /* Reduz tamanho da imagem nos cartões */
+}

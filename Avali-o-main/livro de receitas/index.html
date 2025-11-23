@@ -1,0 +1,49 @@
+<!DOCTYPE html> <!-- Declara que o documento é HTML5 -->
+<html lang="pt-br"> <!-- Define o elemento raiz e o idioma do documento -->
+<head> <!-- Início do cabeçalho com metadados -->
+  <meta charset="utf-8" /> <!-- Define a codificação de caracteres para UTF-8 -->
+  <meta name="viewport" content="width=device-width,initial-scale=1" /> <!-- Ajusta a viewport para dispositivos móveis -->
+  <title>Mini-Livro de Receitas</title> <!-- Título da página mostrado na aba do navegador -->
+  <link rel="stylesheet" href="styles/style.css"> <!-- Importa o arquivo de estilos CSS -->
+  <script src="styles/script.js" defer></script> <!-- Importa o script JS e adia sua execução até o parsing do HTML -->
+</head> <!-- Fim do cabeçalho -->
+<body> <!-- Início do corpo visível da página -->
+  <main class="book"> <!-- Container principal com classe para estilização -->
+    <header> <!-- Cabeçalho do conteúdo principal -->
+      <h1>MINI-LIVRO DE RECEITAS</h1> <!-- Título principal visível -->
+      <p class="lead">Receitas simples e rápidas — escolha uma e veja o modo de preparo.</p> <!-- Texto descritivo abaixo do título -->
+    </header> <!-- Fim do cabeçalho -->
+
+    <section class="list"> <!-- Seção que contém a lista de receitas -->
+      <article class="card" data-file="styles/assets/bolode fuba cremoso.txt" data-img="styles/assets/bolo de fuba cremoso.jpg" data-title="Bolo de Fubá Cremoso"> <!-- Cartão de receita com atributos data- para uso em JS -->
+        <img src="styles/assets/bolo de fuba cremoso.jpg" alt="Bolo de fubá cremoso"> <!-- Imagem da receita -->
+        <h3>Bolo de Fubá Cremoso</h3> <!-- Nome da receita -->
+        <button class="btn-open">Ver Receita</button> <!-- Botão que dispara abertura da receita -->
+      </article> <!-- Fim do cartão da primeira receita -->
+
+      <article class="card" data-file="styles/assets/Panqueca.txt" data-img="styles/assets/panqueca-de-carne-moida-com-molho-de-tomate.webp" data-title="Panqueca de Carne"> <!-- Segundo cartão com dados da panqueca -->
+        <img src="styles/assets/panqueca-de-carne-moida-com-molho-de-tomate.webp" alt="Panqueca"> <!-- Imagem da panqueca -->
+        <h3>Panqueca de Carne</h3> <!-- Nome da receita -->
+        <button class="btn-open">Ver Receita</button> <!-- Botão para abrir -->
+      </article> <!-- Fim do segundo cartão -->
+
+      <article class="card" data-file="styles/assets/Crepioca.txt" data-img="styles/assets/crepioca-funcional.webp" data-title="Crepioca Funcional"> <!-- Terceiro cartão com dados da crepioca -->
+        <img src="styles/assets/crepioca-funcional.webp" alt="Crepioca"> <!-- Imagem da crepioca -->
+        <h3>Crepioca Funcional</h3> <!-- Nome da receita -->
+        <button class="btn-open">Ver Receita</button> <!-- Botão para abrir -->
+      </article> <!-- Fim do terceiro cartão -->
+    </section> <!-- Fim da seção de lista -->
+
+    <div class="controls"> <!-- Container para controles adicionais -->
+      <button id="surprise" class="btn-surprise">Surpresa! Escolha por mim</button> <!-- Botão que seleciona uma receita aleatória -->
+    </div> <!-- Fim dos controles -->
+
+    <section class="recipe-display" aria-live="polite" id="recipeDisplay"> <!-- Área onde a receita selecionada será exibida; aria-live para leitores de tela -->
+      <div class="paper"> <!-- Bloco estilizado como papel -->
+        <h2 id="recipeTitle">Título da Receita</h2> <!-- Título dinâmico que será preenchido pelo JS -->
+        <div id="recipeContent">Clique em "Ver Receita" ou em "Surpresa!" para ver os ingredientes e modo de preparo.</div> <!-- Conteúdo dinâmico das receitas -->
+      </div> <!-- Fim do papel -->
+    </section> <!-- Fim da exibição da receita -->
+  </main> <!-- Fim do container principal -->
+</body> <!-- Fim do corpo -->
+</html> <!-- Fim do documento HTML -->
